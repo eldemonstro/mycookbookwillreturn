@@ -11,6 +11,8 @@ pt-BR:
         cuisine: Cozinha
         difficulty: Dificuldade
         cook_time: Tempo de preparo
+        ingredients: Ingredientes
+        method: Como preparar
   recipes:
     helpers:
       cook_time_in_minutes: "%{time} minutos"

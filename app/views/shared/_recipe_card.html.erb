@@ -1,6 +1,6 @@
 <div class="card" id='<%= "recipe_#{recipe_card.id}" %>'>
   <div class="card-body">
-    <h4 class="card-title"><%= recipe_card.title %></h4>
+    <h4 class="card-title"><%= link_to recipe_card.title, recipe_card %></h4>
     <dl class="row">
       <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.recipe_type' %></dt>
       <dd class="col-sm-9 card-text"><%= recipe_card.recipe_type %></dt>

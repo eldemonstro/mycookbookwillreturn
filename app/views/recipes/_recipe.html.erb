@@ -1,0 +1,15 @@
+<h1><%= recipe.title %></h1>
+<dl class="row">
+  <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.recipe_type' %></dt>
+  <dd class="col-sm-9 card-text"><%= recipe.recipe_type %></dt>
+  <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.cuisine' %></dt>
+  <dd class="col-sm-9 card-text"><%= recipe.cuisine %></dt>
+  <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.difficulty' %></dt>
+  <dd class="col-sm-9 card-text"><%= recipe.difficulty %></dt>
+  <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.cook_time' %></dt>
+  <dd class="col-sm-9 card-text"><%= t 'recipes.helpers.cook_time_in_minutes', time: recipe.cook_time %></dt>
+  <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.ingredients' %></dt>
+  <dd class="col-sm-9 card-text"><%= recipe.ingredients %></dt>
+</dl>
+<h2><%= t 'activerecord.attributes.recipe.method' %></h2>
+<p><%= recipe.method %></p>
