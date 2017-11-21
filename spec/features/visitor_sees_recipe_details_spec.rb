@@ -40,4 +40,12 @@ feature 'visitor visits recipe' do
 
     expect(current_path).to eq(root_path)
   end
+
+  scenario 'and there is no recipe' do
+    visit recipe_path(15)
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_css('div.alert.alert-danger',
+                             text: 'Receita não existente')
+  end
 end
