@@ -1,4 +1,8 @@
-<header class="jumbotron">
+<header class="jumbotron" role="header">
   <h1><%= t('app-name') %></h1>
   <p class="lead"><%= t('app-description') %></p>
 </header>
+
+<section role="recipes:list">
+  <%= render(partial: 'shared/recipe_card', collection: @recipes) || 'Nenhuma receita encontrada' %>
+</section>

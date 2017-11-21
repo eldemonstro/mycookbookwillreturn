@@ -1,0 +1,15 @@
+<div class="card" id='<%= "recipe_#{recipe_card.id}" %>'>
+  <div class="card-body">
+    <h4 class="card-title"><%= recipe_card.title %></h4>
+    <dl class="row">
+      <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.recipe_type' %></dt>
+      <dd class="col-sm-9 card-text"><%= recipe_card.recipe_type %></dt>
+      <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.cuisine' %></dt>
+      <dd class="col-sm-9 card-text"><%= recipe_card.cuisine %></dt>
+      <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.difficulty' %></dt>
+      <dd class="col-sm-9 card-text"><%= recipe_card.difficulty %></dt>
+      <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.cook_time' %></dt>
+      <dd class="col-sm-9 card-text"><%= t 'recipes.helpers.cook_time_in_minutes', time: recipe_card.cook_time %></dt>
+    </dl>
+  </div>
+</div>
