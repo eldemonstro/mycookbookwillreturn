@@ -5,5 +5,8 @@ FactoryBot.define do
     cuisine 'Brasileira'
     difficulty 'Médio'
     cook_time 50
+    ingredients 'Cenoura, farinha, fermento'
+    servings 6
+    add_attribute(:method) { 'Mistura tudo e coloca no forno' }
   end
 end

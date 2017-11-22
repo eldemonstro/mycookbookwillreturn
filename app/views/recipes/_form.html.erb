@@ -1,3 +1,11 @@
+<% if @recipe.errors.any? %>
+  <% @recipe.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger">
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :title %>
   <%= f.input :cuisine %>

@@ -42,7 +42,8 @@ feature 'Visitor visits homepage' do
           expect(page).to have_css('dd', text: "#{banana_assada.cook_time} \
 minutos")
           expect(page).to have_css('dt', text: 'Serve')
-          expect(page).to have_css('dd', text: "#{banana_assada.servings} pratos")
+          expect(page).to have_css('dd', text: "#{banana_assada.servings} \
+pratos")
         end
       end
 
@@ -60,7 +61,8 @@ minutos")
           expect(page).to have_css('dd', text: "#{bolo_laranja.cook_time} \
 minutos")
           expect(page).to have_css('dt', text: 'Serve')
-          expect(page).to have_css('dd', text: "#{banana_assada.servings} pratos")
+          expect(page).to have_css('dd', text: "#{banana_assada.servings} \
+pratos")
         end
       end
     end
