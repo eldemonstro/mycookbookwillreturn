@@ -11,7 +11,7 @@ feature 'visitor visits recipe' do
     visit root_path
     click_on banana_assada.title
 
-    expect(page).to have_css('h1', banana_assada.title)
+    expect(page).to have_css('h1', text: banana_assada.title)
     expect(page).to have_css('dl')
     expect(page).to have_css('dt', text: 'Tipo de receita')
     expect(page).to have_css('dd', text: banana_assada.recipe_type)

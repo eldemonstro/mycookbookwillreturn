@@ -10,6 +10,11 @@
 
   <body>
     <main class="container container-top-spacing" role="main">
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= alert %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
