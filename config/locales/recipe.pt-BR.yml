@@ -11,8 +11,16 @@ pt-BR:
         cuisine: Cozinha
         difficulty: Dificuldade
         cook_time: Tempo de preparo
+        servings: Porções
         ingredients: Ingredientes
         method: Como preparar
   recipes:
+    form:
+      easy: Facíl
+      medium: Médio
+      hard: Difícil
+    recipe:
+      serve: Serve
     helpers:
       cook_time_in_minutes: "%{time} minutos"
+      serves: "%{count} pratos"

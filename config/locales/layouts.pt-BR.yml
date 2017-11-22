@@ -1,0 +1,5 @@
+pt-BR:
+  layouts:
+    application:
+      home: Início
+      register_a_recipe: Cadastrar uma receita

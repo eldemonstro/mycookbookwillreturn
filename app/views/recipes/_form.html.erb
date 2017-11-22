@@ -1,0 +1,11 @@
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :title %>
+  <%= f.input :cuisine %>
+  <%= f.input :recipe_type %>
+  <%= f.input :servings %>
+  <%= f.input :cook_time %>
+  <%= f.input :difficulty, collection: [t('.easy'), t('.medium'), t('.hard')] %>
+  <%= f.input :ingredients %>
+  <%= f.input :method %>
+  <%= f.button :submit %>
+<% end %>

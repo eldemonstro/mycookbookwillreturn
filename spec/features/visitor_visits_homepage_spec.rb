@@ -16,12 +16,14 @@ feature 'Visitor visits homepage' do
     scenario 'sucessfully' do
       banana_assada = create(
         :recipe, title: 'Banana assada', recipe_type: 'Sobremesa',
-                 cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60
+                 cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60,
+                 servings: 6
       )
 
       bolo_laranja = create(
         :recipe, title: 'Bolo de laranja', recipe_type: 'Sobremesa',
-                 cuisine: 'Brasileira', difficulty: 'Médio', cook_time: 60
+                 cuisine: 'Brasileira', difficulty: 'Médio', cook_time: 60,
+                 servings: 6
       )
 
       visit root_path
@@ -39,6 +41,8 @@ feature 'Visitor visits homepage' do
           expect(page).to have_css('dt', text: 'Tempo de preparo')
           expect(page).to have_css('dd', text: "#{banana_assada.cook_time} \
 minutos")
+          expect(page).to have_css('dt', text: 'Serve')
+          expect(page).to have_css('dd', text: "#{banana_assada.servings} pratos")
         end
       end
 
@@ -55,6 +59,8 @@ minutos")
           expect(page).to have_css('dt', text: 'Tempo de preparo')
           expect(page).to have_css('dd', text: "#{bolo_laranja.cook_time} \
 minutos")
+          expect(page).to have_css('dt', text: 'Serve')
+          expect(page).to have_css('dd', text: "#{banana_assada.servings} pratos")
         end
       end
     end

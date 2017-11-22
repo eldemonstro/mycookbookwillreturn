@@ -9,13 +9,23 @@
   </head>
 
   <body>
-    <main class="container container-top-spacing" role="main">
-      <% if flash[:alert] %>
-        <div class="alert alert-danger">
-          <%= alert %>
-        </div>
-      <% end %>
-      <%= yield %>
+    <div class="d-flex flex-row">
+      <ul class="nav flex-md-column">
+        <li class="nav-item">
+          <%= link_to t('.home'), root_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('.register_a_recipe'), new_recipe_path, class: 'nav-link' %>
+        </li>
+      </ul>
+      <main class="container container-top-spacing" role="main">
+        <% if flash[:alert] %>
+          <div class="alert alert-danger">
+            <%= alert %>
+          </div>
+        <% end %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-feature 'visitor visits recipe' do
+feature 'visitor sees recipe' do
   scenario 'sucessfully' do
     banana_assada = create(
       :recipe, title: 'Banana assada', recipe_type: 'Sobremesa',
                cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60,
-               ingredients: 'Banana', method: 'Asse a banana por 60 minutos'
+               ingredients: 'Banana', method: 'Asse a banana por 60 minutos',
+               servings: 6
     )
 
     visit root_path
@@ -21,6 +22,8 @@ feature 'visitor visits recipe' do
     expect(page).to have_css('dd', text: banana_assada.difficulty)
     expect(page).to have_css('dt', text: 'Tempo de preparo')
     expect(page).to have_css('dd', text: "#{banana_assada.cook_time} minutos")
+    expect(page).to have_css('dt', text: 'Serve')
+    expect(page).to have_css('dd', text: "#{banana_assada.servings} pratos")
     expect(page).to have_css('dt', text: 'Ingredientes')
     expect(page).to have_css('dd', text: banana_assada.ingredients)
     expect(page).to have_css('h2', text: 'Como preparar')

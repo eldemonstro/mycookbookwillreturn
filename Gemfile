@@ -38,6 +38,9 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
+# Simple form make forms simplier
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
   # console

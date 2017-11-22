@@ -8,6 +8,8 @@
   <dd class="col-sm-9 card-text"><%= recipe.difficulty %></dt>
   <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.cook_time' %></dt>
   <dd class="col-sm-9 card-text"><%= t 'recipes.helpers.cook_time_in_minutes', time: recipe.cook_time %></dt>
+  <dt class="col-sm-3 card-text"><%= t '.serve' %></dt>
+  <dd class="col-sm-9 card-text"><%= t 'recipes.helpers.serves', count: recipe.servings %></dt>
   <dt class="col-sm-3 card-text"><%= t 'activerecord.attributes.recipe.ingredients' %></dt>
   <dd class="col-sm-9 card-text"><%= recipe.ingredients %></dt>
 </dl>
