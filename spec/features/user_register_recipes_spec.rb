@@ -2,11 +2,15 @@ require 'rails_helper'
 
 feature 'User register recipes' do
   scenario 'successfully' do
+    create(:cuisine, name: 'Brasileira')
+
     visit root_path
     click_on 'Cadastrar uma receita'
 
+    save_page
+
     fill_in 'Título', with: 'Banana assada'
-    fill_in 'Cozinha', with: 'Brasileira'
+    select 'Brasileira', from: 'Cozinha'
     fill_in 'Tipo de receita', with: 'Sobremesa'
     fill_in 'Porções', with: 6
     fill_in 'Tempo de preparo', with: 60
@@ -34,11 +38,13 @@ feature 'User register recipes' do
   end
 
   scenario 'and must fill all required fields' do
+    create(:cuisine, name: 'Brasileira')
+
     visit root_path
     click_on 'Cadastrar uma receita'
 
     fill_in 'Título', with: ''
-    fill_in 'Cozinha', with: ''
+    select '', from: 'Cozinha'
     fill_in 'Tipo de receita', with: ''
     fill_in 'Porções', with: 6
     fill_in 'Tempo de preparo', with: 60

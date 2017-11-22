@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :recipe do
     title 'Bolo de cenoura'
     recipe_type 'Sobremesa'
-    cuisine 'Brasileira'
+    cuisine
     difficulty 'Médio'
     cook_time 50
     ingredients 'Cenoura, farinha, fermento'

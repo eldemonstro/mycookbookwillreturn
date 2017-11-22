@@ -2,9 +2,11 @@ require 'rails_helper'
 
 feature 'visitor sees recipe' do
   scenario 'sucessfully' do
+    cuisine = create(:cuisine, name: 'Brasileira')
+
     banana_assada = create(
       :recipe, title: 'Banana assada', recipe_type: 'Sobremesa',
-               cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60,
+               cuisine: cuisine, difficulty: 'Fácil', cook_time: 60,
                ingredients: 'Banana', method: 'Asse a banana por 60 minutos',
                servings: 6
     )
@@ -17,7 +19,7 @@ feature 'visitor sees recipe' do
     expect(page).to have_css('dt', text: 'Tipo de receita')
     expect(page).to have_css('dd', text: banana_assada.recipe_type)
     expect(page).to have_css('dt', text: 'Cozinha')
-    expect(page).to have_css('dd', text: banana_assada.cuisine)
+    expect(page).to have_css('dd', text: banana_assada.cuisine.name)
     expect(page).to have_css('dt', text: 'Dificuldade')
     expect(page).to have_css('dd', text: banana_assada.difficulty)
     expect(page).to have_css('dt', text: 'Tempo de preparo')
@@ -31,9 +33,11 @@ feature 'visitor sees recipe' do
   end
 
   scenario 'and returns to homepage' do
+    cuisine = create(:cuisine, name: 'Brasileira')
+
     banana_assada = create(
       :recipe, title: 'Banana assada', recipe_type: 'Sobremesa',
-               cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60,
+               cuisine: cuisine, difficulty: 'Fácil', cook_time: 60,
                ingredients: 'Banana', method: 'Asse a banana por 60 minutos'
     )
 

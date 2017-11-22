@@ -14,15 +14,17 @@ feature 'Visitor visits homepage' do
 
   describe 'and sees recipes' do
     scenario 'sucessfully' do
+      cuisine = create(:cuisine, name: 'Brasileira')
+
       banana_assada = create(
         :recipe, title: 'Banana assada', recipe_type: 'Sobremesa',
-                 cuisine: 'Brasileira', difficulty: 'Fácil', cook_time: 60,
+                 cuisine: cuisine, difficulty: 'Fácil', cook_time: 60,
                  servings: 6
       )
 
       bolo_laranja = create(
         :recipe, title: 'Bolo de laranja', recipe_type: 'Sobremesa',
-                 cuisine: 'Brasileira', difficulty: 'Médio', cook_time: 60,
+                 cuisine: cuisine, difficulty: 'Médio', cook_time: 60,
                  servings: 6
       )
 
@@ -35,7 +37,7 @@ feature 'Visitor visits homepage' do
           expect(page).to have_css('dt', text: 'Tipo de receita')
           expect(page).to have_css('dd', text: banana_assada.recipe_type)
           expect(page).to have_css('dt', text: 'Cozinha')
-          expect(page).to have_css('dd', text: banana_assada.cuisine)
+          expect(page).to have_css('dd', text: banana_assada.cuisine.name)
           expect(page).to have_css('dt', text: 'Dificuldade')
           expect(page).to have_css('dd', text: banana_assada.difficulty)
           expect(page).to have_css('dt', text: 'Tempo de preparo')
@@ -54,7 +56,7 @@ pratos")
           expect(page).to have_css('dt', text: 'Tipo de receita')
           expect(page).to have_css('dd', text: bolo_laranja.recipe_type)
           expect(page).to have_css('dt', text: 'Cozinha')
-          expect(page).to have_css('dd', text: bolo_laranja.cuisine)
+          expect(page).to have_css('dd', text: bolo_laranja.cuisine.name)
           expect(page).to have_css('dt', text: 'Dificuldade')
           expect(page).to have_css('dd', text: bolo_laranja.difficulty)
           expect(page).to have_css('dt', text: 'Tempo de preparo')

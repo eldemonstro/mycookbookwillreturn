@@ -8,7 +8,7 @@
 
 <%= simple_form_for @recipe do |f| %>
   <%= f.input :title %>
-  <%= f.input :cuisine %>
+  <%= f.association :cuisine %>
   <%= f.input :recipe_type %>
   <%= f.input :servings %>
   <%= f.input :cook_time %>
